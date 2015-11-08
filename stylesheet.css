@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: verdana, ;
+}
+
+#home.verstopt, #binairDecimaal.verstopt, #valuta.verstopt, #overOns.verstopt {
+    display: none;
+}
+
+#home.zichtbaar, #binairDecimaal.zichtbaar, #valuta.zichtbaar, #overOns.zichtbaar {
+    display: block;
+}
+
+img {
+    border: none;
+    margin: 0;
+    width: 100%;
+    height: 250px;
+}
+
+nav {
+    width: auto;
+    height: 50px;
+    background-color: #0f2d70;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    width: auto;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 15px;
+    width: 20%;
+}
+
+nav ul li a {
+    color: white;
+}
+
+
+nav ul li:hover, nav ul li:hover a {
+    color: black;
+    background-color: lightblue;
+}
+
+#home h1, #home h3 {
+    text-align: center;
+}

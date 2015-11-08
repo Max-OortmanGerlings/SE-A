@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <script type="text/javascript">
+            function test() {
+            alert('test')
+            }
+            function laatZien(divID) {
+                var item = document.getElementById(divID);
+                if (item) {
+                    if(item.className == "zichtbaar") {
+                    item.className = "verstopt"
+                }
+                    else {
+                    item.className = "zichtbaar"
+                }
+            }
+            /** Binair naar Decimaal **/
+            function berekenStelsel() {
+                var getal = parseInt(document.stelselForm.getal.value);
+                if (document.stelselForm.binair.checked) {
+                    var eindGetal = getal.toString(2);
+                }
+                else {
+                    var eindGetal = parseInt(getal, 2);
+                }
+                alert(eindGetal)
+            }
+            /** Euro naar Dollar **/
+            function berekenValuta() {
+                var wisselkoers = parseFloat(document.valutaForm.koers.value);
+                var beginBedrag = parseFloat(document.valutaForm.bedrag.value);
+
+                if (document.valutaForm.usdollar.checked) {
+                        var eindBedrag = beginBedrag*wisselkoers;
+                    }
+                else {
+                        var eindBedrag = beginBedrag/wisselkoers;
+                }
+                alert(eindBedrag);
+            }
+        </script>
+    </head>
+    <body>
+        <img src="headerPic.jpg" />
+        <nav>
+            <ul>
+                <li><a onClick="laatZien('binairDecimaal')">Binair - Decimaal</a></li>
+                <li><a href="javascript:laatZien('valuta');">Euro - Dollar</a></li>
+                <li><a href="javascript:laatZien('overOns');">Over Ons</a></li>
+                <li><a href="javascript:laatZien('home');">Terug</a></li>
+            </ul>
+        </nav>
+        <div id="home" class="zichtbaar">
+            <h1>Welkom op onze website</h1>
+            <h3>Op onze Website kan u verschillende berekeningen laten doen</h3>
+        </div>
+        <div id="binairDecimaal" class="verstopt">
+            <form name="stelselForm">
+                <input type="radio" id="binair" name="binDec" value="binair"> Binair
+                <input type="radio" id="decimaal" name="binDec" value="decimaal"> Decimaal
+                <br>
+                <br>
+                Geef een getal
+                <br>
+                <input type="text" name="getal" value="">
+                <br>
+                <br>
+                <input type="button" name="button" value="Bereken" onClick="berekenStelsel()">
+            </form>
+        </div>
+        <div id="valuta" class="verstopt">
+            <form name="valutaForm">
+                <input type="radio" id="usdollar" name="valutaStart" value="usdollar"> Van euro naar dollar
+                <input type="radio" id="euro" name="valutaStart" value="euro">Van dollar naar euro
+                <br>
+                Wat is de wisselkoers van euro naar dollar?<input type="text" name="koers" value="">
+                <br>
+                <input type="text" name="bedrag" value="bedrag">
+                <br>
+                <input type="button" name="knop" value="bereken" onClick="berekenValuta()">
+            </form>
+        </div>
+        <div id="overOns" class="verstopt">
+        </div>
+    </body>
+</html>
